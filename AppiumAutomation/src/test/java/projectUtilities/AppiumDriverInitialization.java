@@ -21,7 +21,7 @@ public class AppiumDriverInitialization {
 
 		URL url;
 		try {
-			url = new URL("http://192.168.29.199:4723/");
+			url = new URL("http://192.168.1.4:4723/");  //laptop 
 			appiumDriver = new AppiumDriver(url, auto);
 
 		} catch (MalformedURLException e) {
@@ -33,5 +33,3 @@ public class AppiumDriverInitialization {
 	}
 		
 	}
-
-}

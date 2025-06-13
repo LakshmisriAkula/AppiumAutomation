@@ -1,5 +1,7 @@
 package LocatorStrategyInAppium;
 
+import java.time.Duration;
+
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
@@ -10,39 +12,52 @@ import projectUtilities.AppiumDriverInitialization;
 public class testMobileLocator {
 
 	@Test
-	
-	public void testApiumLocators() {
+	public void testAppiumLocator() throws InterruptedException {
+
 		AppiumDriver driver = AppiumDriverInitialization.createAppiumDriver();
-		
+
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+
 		WebElement ele1 = driver.findElement(AppiumBy.accessibilityId("Access'ibility"));
-		System.out.println(ele1);
+		String firstElementName = ele1.getText();
 		ele1.click();
-		
+
+		Thread.sleep(3000);
+
 		driver.navigate().back();
-		
+
 		WebElement ele2 = driver.findElement(AppiumBy.androidUIAutomator("new UiSelector().text(\"Animation\")"));
-		System.out.println(ele2);
+		String secondElementName = ele2.getText();
 		ele2.click();
-		
+
+		Thread.sleep(3000);
 		driver.navigate().back();
 
-		
 		WebElement ele3 = driver.findElement(AppiumBy.xpath("//android.widget.TextView[@content-desc=\"App\"]"));
-		System.out.println(ele3);
+
+		String thirdElementName = ele3.getText();
 		ele3.click();
-		
+
+		Thread.sleep(3000);
+
 		driver.navigate().back();
 
-		
+		// assignment for you guys is : get the text of multiple element and click them
+		// one by one
 		WebElement ele4 = driver.findElements(AppiumBy.className("android.widget.TextView")).get(5);
-		System.out.println(ele4.getText());
+		String fourthElementName = ele4.getText();
+
 		ele4.click();
-		
+
 		driver.navigate().back();
 
-		
+		// assignment for you guys is : get the text of multiple element and click them
+		// one by one
 		WebElement ele5 = driver.findElements(AppiumBy.id("android:id/text1")).get(2);
-		System.out.println(ele5.getText());
+		String fifthElementName = ele5.getText();
+
 		ele5.click();
+
 	}
+
 }
