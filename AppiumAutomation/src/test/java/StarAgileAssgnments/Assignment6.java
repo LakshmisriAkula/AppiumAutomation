@@ -6,6 +6,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.io.FileHandler;
 import org.testng.annotations.Test;
 
@@ -27,9 +28,8 @@ public class Assignment6 {
 			url = new URL("http://192.168.1.15:4723/");
 			AndroidDriver driver = new AndroidDriver(url, auto);
 			Thread.sleep(1500);
-
 			try {
-				File srcFile = driver.getScreenshotAs(OutputType.FILE);
+				File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 				File destFile = new File("screenshot.png");
 				FileHandler.copy(srcFile, destFile);
 			} catch (IOException e) {
