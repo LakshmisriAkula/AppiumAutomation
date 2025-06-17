@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
 import io.appium.java_client.AppiumBy;
-import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.android.AndroidDriver;
 import projectUtilities.AppiumDriverInitialization;
 
 public class LocatorAssignment {
@@ -19,7 +19,7 @@ public class LocatorAssignment {
 		// assignment for you guys is : get the text of multiple element and click them
 		// one by one with className
 
-		AppiumDriver driver = AppiumDriverInitialization.createAppiumDriver();
+		AndroidDriver driver = AppiumDriverInitialization.createAppiumDriver();
 
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
 

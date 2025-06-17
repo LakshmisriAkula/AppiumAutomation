@@ -7,14 +7,14 @@ import org.testng.annotations.Test;
 import com.google.common.collect.ImmutableMap;
 
 import io.appium.java_client.AppiumBy;
-import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.android.AndroidDriver;
 import projectUtilities.AppiumDriverInitialization;
 
 public class clickGestures {
 
 	@Test
 	public void testClickGestures() {
-		AppiumDriver driver = AppiumDriverInitialization.createAppiumDriver();
+		AndroidDriver driver = AppiumDriverInitialization.createAppiumDriver();
 		WebElement ele1 = driver.findElement(AppiumBy.accessibilityId("Accessibility"));
 
 		driver.executeScript("mobile: clickGesture", ImmutableMap.of("elementId", ((RemoteWebElement) ele1).getId()));

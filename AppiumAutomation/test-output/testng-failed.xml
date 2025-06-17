@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="appiumConnectionSetups.CreateAppiumConnectionUsingDC">
+      <class name="Assignments.alertAssignment">
         <methods>
-          <include name="createAppiumCnction"/>
+          <include name="testAlerts"/>
         </methods>
-      </class> <!-- appiumConnectionSetups.CreateAppiumConnectionUsingDC -->
+      </class> <!-- Assignments.alertAssignment -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

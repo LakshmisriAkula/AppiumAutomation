@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
 import io.appium.java_client.AppiumBy;
-import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.android.AndroidDriver;
 import projectUtilities.AppiumDriverInitialization;
 
 public class testMobileLocator {
@@ -14,7 +14,7 @@ public class testMobileLocator {
 	@Test
 	public void testAppiumLocator() throws InterruptedException {
 
-		AppiumDriver driver = AppiumDriverInitialization.createAppiumDriver();
+		AndroidDriver driver = AppiumDriverInitialization.createAppiumDriver();
 
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
