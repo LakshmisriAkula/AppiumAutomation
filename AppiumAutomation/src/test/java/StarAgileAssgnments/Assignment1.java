@@ -14,18 +14,10 @@ public class Assignment1 {
 	@Test
 	public void ConnectAndroidDevice() {
 
-		UiAutomator2Options auto = new UiAutomator2Options();
+		AndroidDriver driver = BaseDriver.driverSetup();
 
-		URL url;
-		try {
-			url = new URL("http://192.168.1.15:4723/");
-			AndroidDriver driver = new AndroidDriver(url, auto);
-			System.out.println("Session ID: " + driver.getSessionId());
-
-		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		System.out.println("Session ID: " + driver.getSessionId());
 
 	}
+
 }

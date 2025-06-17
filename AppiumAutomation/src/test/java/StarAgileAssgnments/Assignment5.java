@@ -21,35 +21,21 @@ public class Assignment5 {
 	@Test
 	public void dragAndDropTest() throws InterruptedException {
 
-		UiAutomator2Options auto = new UiAutomator2Options();
-		String apkPath = System.getProperty("user.dir") + "//src//test//resources//ApiDemos-debug.apk";
-		auto.setCapability("appium:app", apkPath);
-		URL url;
-		try {
-			url = new URL("http://192.168.1.15:4723/");
-			AndroidDriver driver = new AndroidDriver(url, auto);
-			Thread.sleep(1500);
-			driver.findElement(AppiumBy.accessibilityId("Views")).click();
+		AndroidDriver driver = BaseDriver.driverSetup();
 
-			Thread.sleep(2000);
-			// click on drag and drop
-			driver.findElement(AppiumBy.accessibilityId("Drag and Drop")).click();
+		driver.findElement(AppiumBy.accessibilityId("Views")).click();
 
-			Thread.sleep(2000);
+		Thread.sleep(2000);
+		// click on drag and drop
+		driver.findElement(AppiumBy.accessibilityId("Drag and Drop")).click();
 
-			WebElement longClickElement = driver.findElement(AppiumBy.id("io.appium.android.apis:id/drag_dot_1"));
+		Thread.sleep(2000);
 
-			driver.executeScript("mobile: dragGesture",
-					ImmutableMap.of("elementId", ((RemoteWebElement) longClickElement).getId(), "endX", 633, "endY", 972));
+		WebElement longClickElement = driver.findElement(AppiumBy.id("io.appium.android.apis:id/drag_dot_1"));
 
-		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
+		driver.executeScript("mobile: dragGesture",
+				ImmutableMap.of("elementId", ((RemoteWebElement) longClickElement).getId(), "endX", 633, "endY", 972));
+
 	}
-	
+
 }
-
-
-

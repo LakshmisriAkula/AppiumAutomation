@@ -17,23 +17,13 @@ public class Assignment2 {
 	@Test
 	public void appStateTest() {
 
-		UiAutomator2Options auto = new UiAutomator2Options();
-		String apkPath = System.getProperty("user.dir") + "//src//test//resources//ApiDemos-debug.apk";
-		auto.setCapability("appium:app", apkPath);
-		URL url;
-		try {
-			url = new URL("http://192.168.1.15:4723/");
-			AndroidDriver driver = new AndroidDriver(url, auto);
-			System.out.println("App State (Launched): " + driver.queryAppState(apkPath));
+		AndroidDriver driver = BaseDriver.driverSetup();
 
-			driver.runAppInBackground(Duration.ofSeconds(10));
+		System.out.println("App State (Launched): " + driver.queryAppState(BaseDriver.APP_PACKAGE));
 
-			System.out.println("App State (After Resume): " + driver.queryAppState(apkPath));
+		driver.runAppInBackground(Duration.ofSeconds(10));
 
-		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		System.out.println("App State (After Resume): " + driver.queryAppState(BaseDriver.APP_PACKAGE));
 
 	}
 }

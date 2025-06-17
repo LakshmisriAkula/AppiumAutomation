@@ -20,26 +20,16 @@ public class Assignment6 {
 	@Test
 	public void captureScreenshot() throws InterruptedException {
 
-		UiAutomator2Options auto = new UiAutomator2Options();
-		String apkPath = System.getProperty("user.dir") + "//src//test//resources//ApiDemos-debug.apk";
-		auto.setCapability("appium:app", apkPath);
-		URL url;
-		try {
-			url = new URL("http://192.168.1.15:4723/");
-			AndroidDriver driver = new AndroidDriver(url, auto);
-			Thread.sleep(1500);
-			try {
-				File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-				File destFile = new File("screenshot.png");
-				FileHandler.copy(srcFile, destFile);
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				System.out.println("error " + e.getMessage());
-			}
+		AndroidDriver driver = BaseDriver.driverSetup();
 
-		} catch (MalformedURLException e) {
+		Thread.sleep(1500);
+		try {
+			File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+			File destFile = new File("screenshot.png");
+			FileHandler.copy(srcFile, destFile);
+		} catch (IOException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("error " + e.getMessage());
 		}
 
 	}
