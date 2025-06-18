@@ -1,0 +1,94 @@
+1. Android Studio Download ... let this continue
+2. node - v | check node version
+3. Install appium --> npm install -g appium (sudo for Mac os)
+4. Where appium  -- tell location of appium in your PC's
+5. appium ---> to start appium server , allow the window security
+6. press --> ctrl+c   --> stop appium server.
+7. UI automator 2 driver --> appium driver list | displayed lists of driver
+8. appium driver install uiautomator2
+9. github.com/appium/appium-inspector/releases/tag/v2024.9.1
+   click on Appium-Inspector-2024.9.1-win.exe to download.
+10. install - android-studio-2024.3.1.13 
+
+
+What is Mobile testing ?
+Mobile testing refers to test the mobile application (apps - facebook,icici, amazon, flipkart) on various devices (android devices, IOS devices) and platform android and iOS to ensure functionality working as expected to provide smooth and bug free experience (USER).
+
+
+Testing Conduct on mobile
+   1. Functional
+   2. Usability | compatibility
+   3. Accessibility
+   4. Performance
+   5. Security
+   6. Configuration  | Interupts testing
+   7. Hardware testing.
+
+
+   Types of mobile testing
+   1. Manually
+   2. Automation.
+
+
+1. Type of Application
+   a. Native apps
+   b. Mobile WebApps
+   c. Hybrid Application
+
+
+Till appium 1.0 desiredCapabilities class to configured the environment
+UIAutomatorOption2
+
+Locator strategy in Android (Appium)
+   total 5 type way can get the locator addresses in appium
+    1. Accessibility ID -->unique element ID
+    2. ID  --> resource-id ()
+    3. Class name
+    4. xpath
+    5. UI automator 2
+
+
+
+Assignments for appium automation
+1. write an automation script for swipe gesture
+2. write an automation script for Alert (up to your choice.)
+
+
+
+
+Android specific operation (device)
+1. Lock the device
+2. unlock the device
+3. rotate the device wise versa
+4. toggleoff/on - mobile data - wifi
+5. enable airplane mode/disable
+
+
+What is package and activity of any mobile app
+
+1. amazon  - URL | 
+activity - login | register | plp 
+
+Real Device Setup: Enable USB debugging on Android mobile
+========================================================
+Note: Steps can differ based on the phone manufacturer!
+-> Settings -> System -> About Phone -> Click Build Number 7-8 times
+-> Settings -> Developer Options -> Enable USB Debugging
+-> Permission pop-up: Check the box and press Allow to recognise the computer
+-> Setting -> Developer Options -> Enable Disable permission monitoring
+-> Setting -> Developer Options -> Enable Disable child process restrictions
+-> Setting -> Developer Options -> Enable Force allow apps on external
+-> run "adb devices" in CMD prompt to check if device is recognised
+
+-> USB drivers:
+Google: https://developer.android.com/studio/run/win-usb
+OEMs: https://developer.android.com/studio/run/oem-usb
+
+https://www.vysor.io/download/
+
+Options to be enabled under developermode
+1. Don not use lock screen
+2. usb debugging
+3. Force allow apps on external
+3. Disable child process restrictions
+4. Disable premission montioring
