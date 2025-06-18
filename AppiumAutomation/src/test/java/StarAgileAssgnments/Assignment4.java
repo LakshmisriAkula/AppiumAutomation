@@ -1,12 +1,9 @@
 package StarAgileAssgnments;
 
 import java.net.MalformedURLException;
-import java.net.URL;
-
 import org.testng.annotations.Test;
 
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.android.options.UiAutomator2Options;
 
 public class Assignment4 {
 
@@ -31,6 +28,11 @@ public class Assignment4 {
 		System.out.println("app state after installing --> " + ((AndroidDriver) driver).queryAppState(currentPackage));
 
 		driver.activateApp(currentPackage);
+		
+		Thread.sleep(4000);
+		
+		System.out.println("app state after activating --> " + ((AndroidDriver) driver).queryAppState(currentPackage));
+
 
 	}
 
