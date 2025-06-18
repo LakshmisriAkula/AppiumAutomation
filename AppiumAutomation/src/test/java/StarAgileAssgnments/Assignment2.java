@@ -19,11 +19,17 @@ public class Assignment2 {
 
 		AndroidDriver driver = BaseDriver.driverSetup();
 
-		System.out.println("App State (Launched): " + driver.queryAppState(BaseDriver.APP_PACKAGE));
+		String currentPackage = driver.getCurrentPackage();
 
-		driver.runAppInBackground(Duration.ofSeconds(10));
+		System.out.println("App State (Launched): " + driver.queryAppState(currentPackage));
 
-		System.out.println("App State (After Resume): " + driver.queryAppState(BaseDriver.APP_PACKAGE));
+		driver.runAppInBackground(Duration.ofSeconds(-1));
+
+		System.out.println("App State in BackGround: " + driver.queryAppState(currentPackage));
+
+		driver.activateApp(currentPackage);
+
+		System.out.println("App State (After activate): " + driver.queryAppState(currentPackage));
 
 	}
 }

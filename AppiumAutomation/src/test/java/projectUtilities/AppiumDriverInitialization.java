@@ -24,13 +24,15 @@ public class AppiumDriverInitialization {
 
 		URL url;
 		try {
-			url = new URL("http://192.168.1.4:4723/"); // laptop home
+//			url = new URL("http://192.168.1.4:4723/"); // laptop home
 
 			url = new URL("http://192.168.1.15:4723/"); // laptop ofc
 
 //			appiumDriver = new AppiumDriver(url, auto);
 
 			driver = new AndroidDriver(url, auto);
+
+			System.out.println("Session Id: " + driver.getSessionId());
 
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block

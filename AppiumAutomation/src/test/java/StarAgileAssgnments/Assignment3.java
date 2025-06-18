@@ -18,9 +18,11 @@ public class Assignment3 {
 
 		AndroidDriver driver = BaseDriver.driverSetup();
 
-		Thread.sleep(1500);
-		driver.removeApp(BaseDriver.APP_PACKAGE);
-		System.out.println("App Uninstalled");
+		String currentPackage = driver.getCurrentPackage();
+
+		driver.removeApp(currentPackage);
+
+		System.out.println("App State (After Uninstall): " + driver.queryAppState(currentPackage));
 
 	}
 }

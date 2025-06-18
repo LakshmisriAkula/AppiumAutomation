@@ -8,6 +8,7 @@ import org.testng.annotations.Test;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 import projectUtilities.AppiumDriverInitialization;
+import projectUtilities.baseUtil;
 
 public class testMobileLocator {
 
@@ -29,6 +30,8 @@ public class testMobileLocator {
 		WebElement ele2 = driver.findElement(AppiumBy.androidUIAutomator("new UiSelector().text(\"Animation\")"));
 		String secondElementName = ele2.getText();
 		ele2.click();
+		
+		baseUtil.getScreenshot(driver, secondElementName);
 
 		Thread.sleep(3000);
 		driver.navigate().back();
@@ -37,6 +40,8 @@ public class testMobileLocator {
 
 		String thirdElementName = ele3.getText();
 		ele3.click();
+		
+		baseUtil.getScreenshot(driver, thirdElementName);
 
 		Thread.sleep(3000);
 

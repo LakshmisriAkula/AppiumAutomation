@@ -1,14 +1,35 @@
 package projectUtilities;
 
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.remote.RemoteWebElement;
-import org.testng.annotations.Test;
 
 import com.google.common.collect.ImmutableMap;
 
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.android.AndroidDriver;
 
 public class baseUtil {
+
+	public static void getScreenshot(AndroidDriver driver, String name) {
+		String timestamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
+		String path = "screenshots/" + name + "_" + timestamp + ".png";
+
+		File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+		File dest = new File(path);
+		try {
+			FileHandler.copy(src, dest);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 
 	public static void scrollDownToUserCount(AppiumDriver driver, WebElement area, int count) {
 
