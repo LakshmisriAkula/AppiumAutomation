@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-06-18T13:24:59 IST" name="Default suite" finished-at="2025-06-18T13:25:10 IST" duration-ms="10591">
+  <suite started-at="2025-06-18T13:51:48 IST" name="Default suite" finished-at="2025-06-18T13:51:58 IST" duration-ms="9677">
     <groups>
     </groups>
-    <test started-at="2025-06-18T13:24:59 IST" name="Default test" finished-at="2025-06-18T13:25:10 IST" duration-ms="10591">
+    <test started-at="2025-06-18T13:51:48 IST" name="Default test" finished-at="2025-06-18T13:51:58 IST" duration-ms="9677">
       <class name="StarAgileAssgnments.Assignment6">
-        <test-method signature="captureScreenshot()[pri:0, instance:StarAgileAssgnments.Assignment6@dd05255]" started-at="2025-06-18T13:25:00 IST" name="captureScreenshot" finished-at="2025-06-18T13:25:10 IST" duration-ms="10539" status="PASS">
+        <test-method signature="captureScreenshot()[pri:0, instance:StarAgileAssgnments.Assignment6@dd05255]" started-at="2025-06-18T13:51:48 IST" name="captureScreenshot" finished-at="2025-06-18T13:51:58 IST" duration-ms="9613" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- captureScreenshot -->
